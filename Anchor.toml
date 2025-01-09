@@ -1,0 +1,28 @@
+[toolchain]
+
+[features]
+resolution = true
+skip-lint = false
+
+[programs.devnet]
+pumpup = "59wC6chTKF2Hbbt4oByvbL4H8mPf1qNLBWUWvPuptUkB"
+
+[registry]
+url = "https://api.devnet.solana.com"
+
+[provider]
+cluster = "Devnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+buy = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/buy.ts"
+create = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/create.ts"
+init = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/initialize.ts"
+sell = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/sell.ts"
+sucking = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/sucking.ts"
+transfusion = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/transfusion.ts"
+
+[test]
+startup_wait = 10000
+shutdown_wait = 2000
+upgradeable = false
